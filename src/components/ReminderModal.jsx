@@ -13,13 +13,14 @@ const ReminderModal = ({ isOpen, message, onConfirm, onDeny }) => {
     
     if (isOpen) {
       document.addEventListener('keydown', handleEscape)
-      setTimeout(() => setIsAnimating(true), 10) // Trigger animation after render
+      const timeoutId = setTimeout(() => setIsAnimating(true), 10) // Trigger animation after render
     } else {
       setIsAnimating(false)
     }
     
     return () => {
       document.removeEventListener('keydown', handleEscape)
+      clearTimeout(timeoutId) // Clear the timeout to prevent memory leaks
     }
   }, [isOpen, onDeny])
 
