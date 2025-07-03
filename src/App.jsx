@@ -37,7 +37,7 @@ function App() {
   const handleStartTimer = (e) => {
     e.preventDefault()
     if (taskTitle && minutes && reminderMessage) {
-      setTimeLeft(parseInt(minutes) * 60)
+      setTimeLeft(parseInt(minutes, 10) * 60)
       setIsTimerActive(true)
     }
   }
