@@ -106,7 +106,7 @@ function App() {
         <div class="flex-1">
           <p class="text-slate-100 font-medium text-sm leading-relaxed">${message}</p>
         </div>
-        <button class="toast-close text-slate-400 hover:text-slate-200 transition-colors text-lg leading-none" onclick="this.parentElement.parentElement.parentElement.remove()">×</button>
+        <button class="toast-close text-slate-400 hover:text-slate-200 transition-colors text-lg leading-none">×</button>
       </div>
     `
     
