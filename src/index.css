@@ -227,7 +227,7 @@ body {
   }
 }
 
-/* Modal Animation */
+/* Animations */
 @keyframes modalFadeIn {
   from {
     opacity: 0;
