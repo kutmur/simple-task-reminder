@@ -30,7 +30,7 @@ const ReminderModal = ({ isOpen, message, onConfirm, onDeny }) => {
   if (!isOpen) return null
 
   return (
-    <div className={`fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 transition-opacity duration-300 ${
+    <div role="dialog" aria-modal="true" aria-labelledby="reminder-modal-title" className={`fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 transition-opacity duration-300 ${
       isAnimating ? 'opacity-100' : 'opacity-0'
     }`}>
       <div className={`bg-slate-800 rounded-lg p-6 w-full max-w-md shadow-2xl transform transition-all duration-300 ${
