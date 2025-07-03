@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 
-const ReminderModal = ({ isOpen, message, onConfirm, onDeny }) => {
+const ReminderModal = ({ isOpen, message, onYes, onNo }) => {
   const [isAnimating, setIsAnimating] = useState(false)
 
   // Close modal on Escape key
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
-        onDeny()
+        onNo()
       }
     }
     
