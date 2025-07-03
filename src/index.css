@@ -114,8 +114,8 @@ body {
   transform: none;
 }
 
-/* Modal Animation */
-@keyframes modalFadeIn {
+/* Reusable Animation Keyframes */
+@keyframes fadeInScaleUp {
   from {
     opacity: 0;
     transform: scale(0.9) translateY(20px);
