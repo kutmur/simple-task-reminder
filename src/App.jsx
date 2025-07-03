@@ -304,8 +304,8 @@ function App() {
       {/* Modal */}
       {showModal && (
         <ReminderModal
-          showModal={showModal}
-          reminderMessage={reminderMessage}
+          isOpen={showModal}
+          message={reminderMessage}
           onYes={handleYes}
           onNo={handleNo}
         />
