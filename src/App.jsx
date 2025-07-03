@@ -303,35 +303,12 @@ function App() {
       
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 z-50">
-          <div className="modal-content bg-[#1e293b] rounded-3xl shadow-2xl border border-slate-700/50 p-8 w-full max-w-md">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <span className="text-3xl">⏰</span>
-              </div>
-              <h2 className="text-2xl font-bold text-slate-100 mb-4 tracking-tight">
-                Reminder Time!
-              </h2>
-              <p className="text-slate-300 text-lg mb-8 leading-relaxed font-medium">
-                {reminderMessage}
-              </p>
-              <div className="flex gap-4">
-                <button
-                  onClick={handleYes}
-                  className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 flex-1 shadow-lg hover:shadow-emerald-500/25 transform hover:-translate-y-1 hover:scale-105"
-                >
-                  ✓ Yes, Done!
-                </button>
-                <button
-                  onClick={handleNo}
-                  className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 flex-1 shadow-lg hover:shadow-amber-500/25 transform hover:-translate-y-1 hover:scale-105"
-                >
-                  ⏰ Snooze 5 min
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ReminderModal
+          showModal={showModal}
+          reminderMessage={reminderMessage}
+          onYes={handleYes}
+          onNo={handleNo}
+        />
       )}
       
       {/* Global Toast Notification Container */}
