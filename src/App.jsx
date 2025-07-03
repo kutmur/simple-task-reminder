@@ -282,7 +282,7 @@ function App() {
                 <div 
                   className="progress-bar"
                   style={{
-                    width: `${((parseInt(minutes) * 60 - timeLeft) / (parseInt(minutes) * 60)) * 100}%`
+                    width: `${((totalDuration - timeLeft) / totalDuration) * 100}%`
                   }}
                 ></div>
               </div>
