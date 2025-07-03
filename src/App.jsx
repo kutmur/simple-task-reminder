@@ -98,17 +98,20 @@ function App() {
       info: 'from-blue-500 to-indigo-600'
     }
     
+    const messageElement = document.createElement('p');
+    messageElement.className = 'text-slate-100 font-medium text-sm leading-relaxed';
+    messageElement.textContent = message;
+    
     toastContent.innerHTML = `
       <div class="flex items-center gap-4">
         <div class="w-10 h-10 bg-gradient-to-br ${colorMap[type]} rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
           <span class="text-white text-sm font-semibold">${iconMap[type]}</span>
         </div>
-        <div class="flex-1">
-          <p class="text-slate-100 font-medium text-sm leading-relaxed">${message}</p>
-        </div>
+        <div class="flex-1"></div>
         <button class="toast-close text-slate-400 hover:text-slate-200 transition-colors text-lg leading-none">×</button>
       </div>
-    `
+    `;
+    toastContent.querySelector('.flex-1').appendChild(messageElement);
     
     toast.appendChild(toastContent)
     container.appendChild(toast)
