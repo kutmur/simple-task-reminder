@@ -111,6 +111,15 @@ function App() {
         <button class="toast-close text-slate-400 hover:text-slate-200 transition-colors text-lg leading-none">×</button>
       </div>
     `;
+    
+    // Add click event listener to close button
+    const closeButton = toastContent.querySelector('.toast-close');
+    closeButton.addEventListener('click', () => {
+      if (toast.parentNode) {
+        toast.remove();
+      }
+    });
+    
     toastContent.querySelector('.flex-1').appendChild(messageElement);
     
     toast.appendChild(toastContent)
