@@ -179,59 +179,64 @@ function App() {
         
         {/* Setup Form - Hidden when timer is active */}
         {!isTimerActive && (
-          <form onSubmit={handleStartTimer} className="setup-view space-y-8">
-            {/* Task Title */}
-            <div className="space-y-3">
-              <label className="text-slate-300 font-semibold text-xs tracking-wider uppercase block">
-                Task Title
-              </label>
-              <input
-                type="text"
-                value={taskTitle}
-                onChange={(e) => setTaskTitle(e.target.value)}
-                placeholder="What needs to be done?"
-                className="input-custom w-full"
-              />
-            </div>
-            
-            {/* Minutes */}
-            <div className="space-y-3">
-              <label className="text-slate-300 font-semibold text-xs tracking-wider uppercase block">
-                Remind me in (Minutes)
-              </label>
-              <input
-                type="number"
-                value={minutes}
-                onChange={(e) => setMinutes(e.target.value)}
-                placeholder="Enter minutes"
-                min="1"
-                className="input-custom w-full"
-              />
-            </div>
-            
-            {/* Reminder Question */}
-            <div className="space-y-3">
-              <label className="text-slate-300 font-semibold text-xs tracking-wider uppercase block">
-                Reminder Question
-              </label>
-              <input
-                type="text"
-                value={reminderMessage}
-                onChange={(e) => setReminderMessage(e.target.value)}
-                placeholder="What should I ask you when it's time?"
-                className="input-custom w-full"
-              />
-            </div>
-            
-            {/* Start Button */}
-            <button
-              type="submit"
-              disabled={!taskTitle || !minutes || !reminderMessage}
-              className="btn-primary w-full mt-8"
-            >
-              Start Timer
-            </button>
-          </form>
+          <div className="form-container">
+            <form onSubmit={handleStartTimer} className="centered-form">
+              {/* Task Title */}
+              <div className="form-group">
+                <label htmlFor="task-title" className="form-label">
+                  Task Title
+                </label>
+                <input
+                  id="task-title"
+                  type="text"
+                  value={taskTitle}
+                  onChange={(e) => setTaskTitle(e.target.value)}
+                  placeholder="What needs to be done?"
+                  className="input-custom w-full"
+                />
+              </div>
+              
+              {/* Minutes */}
+              <div className="form-group">
+                <label htmlFor="reminder-minutes" className="form-label">
+                  Remind me in (Minutes)
+                </label>
+                <input
+                  id="reminder-minutes"
+                  type="number"
+                  value={minutes}
+                  onChange={(e) => setMinutes(e.target.value)}
+                  placeholder="Enter minutes"
+                  min="1"
+                  className="input-custom w-full"
+                />
+              </div>
+              
+              {/* Reminder Question */}
+              <div className="form-group">
+                <label htmlFor="reminder-message" className="form-label">
+                  Reminder Question
+                </label>
+                <input
+                  id="reminder-message"
+                  type="text"
+                  value={reminderMessage}
+                  onChange={(e) => setReminderMessage(e.target.value)}
+                  placeholder="What should I ask you when it's time?"
+                  className="input-custom w-full"
+                />
+              </div>
+              
+              {/* Start Button */}
+              <button
+                type="submit"
+                disabled={!taskTitle || !minutes || !reminderMessage}
+                className="btn-primary w-full form-submit-btn"
+              >
+                Start Timer
+              </button>
+            </form>
+          </div>
         )}
 
         {/* Timer Active View - Shown when timer is running */}
